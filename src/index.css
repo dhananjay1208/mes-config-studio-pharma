@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-plant-950 text-slate-200;
+  }
+  body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .panel {
+    @apply bg-plant-850 border border-slate-700/70 rounded-xl;
+  }
+  .panel-title {
+    @apply text-[11px] font-semibold uppercase tracking-widest text-slate-400;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors
+      disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer select-none;
+  }
+  .btn-primary {
+    @apply btn bg-violet-600 hover:bg-violet-500 text-white;
+  }
+  .btn-ghost {
+    @apply btn bg-slate-700/50 hover:bg-slate-600/60 text-slate-200 border border-slate-600;
+  }
+  .btn-danger {
+    @apply btn bg-red-700/80 hover:bg-red-600 text-white;
+  }
+  .btn-success {
+    @apply btn bg-emerald-600 hover:bg-emerald-500 text-white;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide;
+  }
+  .input {
+    @apply w-full rounded-lg border-2 border-slate-600 bg-plant-900 px-3 py-2 text-sm text-slate-100 outline-none
+      focus:border-violet-500 placeholder:text-slate-500;
+  }
+  .mono {
+    @apply font-mono tracking-tight;
+  }
+  .rail-link {
+    @apply flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm text-slate-400 hover:bg-plant-800 hover:text-slate-200 transition-colors;
+  }
+  .rail-link-active {
+    @apply bg-violet-600/15 text-violet-300 hover:bg-violet-600/20 hover:text-violet-200;
+  }
+}
+
+/* Go-Live report print styling */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .print-area, .print-area * {
+    visibility: visible;
+  }
+  .print-area {
+    position: absolute;
+    inset: 0;
+    background: white !important;
+    color: #111 !important;
+  }
+}
